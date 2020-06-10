@@ -37,10 +37,11 @@ public class DBSeeder implements CommandLineRunner {
                                 "Bike",
                                 10,
                                 0,
-                                new Payment())))
+                                "dummy_123",
+                                false)))
         ));
-        /*log.info("Cleaning up data");
-        repository.deleteAll();*/
+        log.info("Cleaning up data");
+        repository.deleteAll();
 
         log.info("Saving bootstrap data into repository");
         repository.save(parkingLot);
