@@ -1,5 +1,6 @@
 package com.example.systemdesign.parkinglot.document;
 
+import com.example.systemdesign.parkinglot.idgenerator.GenerateUniqueId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,11 +13,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class ParkingSpot {
     @Id
-    private String id;
+    private String id = GenerateUniqueId.generate();
     private String spotType;
-    private int availableSpot;
-    private int acquiredSpot;
-    public String vehicleNumber;
-    public boolean isPaid;
-    //private Payment payment;
+    private int availableCount;
+    private int acquiredCount;
+    private String parkingLotId;
+    private String floorId;
+    private String parkingCategoryId;
 }

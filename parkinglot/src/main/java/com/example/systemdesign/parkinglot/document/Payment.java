@@ -22,4 +22,8 @@ public class Payment {
     private LocalDateTime outTime;
     private String paymentType;
     private boolean isPaid;
+    private String parkingLotId;
+    private String floorId;
+    private String parkingSpotId;
+    private String parkingCategoryId;
 }

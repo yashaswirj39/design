@@ -1,9 +1,9 @@
-package com.example.systemdesign.parkinglot;
+package com.example.systemdesign.parkinglot.idgenerator;
 
 import java.util.UUID;
 
 public class GenerateUniqueId {
-    public String generate() {
+    public static String generate() {
         return UUID.randomUUID().toString();
     }
 }

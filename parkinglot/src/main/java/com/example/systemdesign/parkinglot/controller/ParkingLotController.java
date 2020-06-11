@@ -2,6 +2,8 @@ package com.example.systemdesign.parkinglot.controller;
 
 import com.example.systemdesign.parkinglot.document.Floors;
 import com.example.systemdesign.parkinglot.document.ParkingLot;
+import com.example.systemdesign.parkinglot.document.ParkingSpot;
+import com.example.systemdesign.parkinglot.idgenerator.GenerateUniqueId;
 import com.example.systemdesign.parkinglot.repos.ParkingLotRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +28,7 @@ public class ParkingLotController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/addparkinglot")
     public ParkingLot addParkingLot(@RequestBody ParkingLot parkingLot) {
-        return repository.save(parkingLot);
+        return repository.insert(parkingLot);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/deleteparkinglot/{id}")

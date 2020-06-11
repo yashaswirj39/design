@@ -1,5 +1,6 @@
 package com.example.systemdesign.parkinglot.document;
 
+import com.example.systemdesign.parkinglot.idgenerator.GenerateUniqueId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 public class ParkingLot {
     @Id
-    private String id;
+    private String id = GenerateUniqueId.generate();
     private String longitude;
     private String latitude;
     private String entry;

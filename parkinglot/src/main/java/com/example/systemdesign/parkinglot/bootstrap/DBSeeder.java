@@ -24,7 +24,7 @@ public class DBSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        ParkingLot parkingLot = new ParkingLot();
+        /*ParkingLot parkingLot = new ParkingLot();
         parkingLot.setId(UUID.randomUUID().toString());
         parkingLot.setEntry("Entry1");
         parkingLot.setExit("Exit1");
@@ -46,6 +46,6 @@ public class DBSeeder implements CommandLineRunner {
         log.info("Saving bootstrap data into repository");
         repository.save(parkingLot);
         log.info("fetching data from repository for confirmation");
-        log.info(String.valueOf(repository.findAll()));
+        log.info(String.valueOf(repository.findAll()));*/
     }
 }
