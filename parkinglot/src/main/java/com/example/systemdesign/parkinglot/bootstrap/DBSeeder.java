@@ -24,28 +24,6 @@ public class DBSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        /*ParkingLot parkingLot = new ParkingLot();
-        parkingLot.setId(UUID.randomUUID().toString());
-        parkingLot.setEntry("Entry1");
-        parkingLot.setExit("Exit1");
-        parkingLot.setLatitude("1234");
-        parkingLot.setLongitude("4321");
-        parkingLot.setFloorsList(Arrays.asList(
-                new Floors(UUID.randomUUID().toString(),
-                        Arrays.asList(new ParkingSpot(
-                                UUID.randomUUID().toString(),
-                                "Bike",
-                                10,
-                                0,
-                                "dummy_123",
-                                false)))
-        ));
-        log.info("Cleaning up data");
-        repository.deleteAll();
 
-        log.info("Saving bootstrap data into repository");
-        repository.save(parkingLot);
-        log.info("fetching data from repository for confirmation");
-        log.info(String.valueOf(repository.findAll()));*/
     }
 }

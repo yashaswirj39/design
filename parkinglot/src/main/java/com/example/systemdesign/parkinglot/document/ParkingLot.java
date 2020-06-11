@@ -22,5 +22,4 @@ public class ParkingLot {
     private String latitude;
     private String entry;
     private String exit;
-    private List<Floors> floorsList = new ArrayList<>();
 }

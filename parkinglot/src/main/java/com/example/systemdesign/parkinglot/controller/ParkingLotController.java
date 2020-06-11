@@ -38,16 +38,7 @@ public class ParkingLotController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/addfloor")
     public String addFloor(@RequestBody ParkingLot parkingLot) {
-        Optional<ParkingLot> lot = repository.findById(parkingLot.getId());
-        if (lot.get().getId().equalsIgnoreCase(parkingLot.getId())) {
-            List<Floors> floors = lot.get().getFloorsList();
-            floors.addAll(parkingLot.getFloorsList());
-            parkingLot.setFloorsList(floors);
-            repository.save(parkingLot);
-            return "floor for parking lot id: " + parkingLot.getId() + "is added";
-        } else {
-            return "parking lot id: " + parkingLot.getId() + "does not exists";
-        }
+        return null;
     }
 
     //todo update parking lot
