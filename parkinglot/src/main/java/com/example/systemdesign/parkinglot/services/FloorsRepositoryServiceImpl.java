@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class FloorsRepositoryServiceImpl implements CommonRepositoryService<Floors, String>{
+public class FloorsRepositoryServiceImpl implements CommonRepositoryService<Floors, String> {
 
     private final FloorsRepository repositoryService;
 

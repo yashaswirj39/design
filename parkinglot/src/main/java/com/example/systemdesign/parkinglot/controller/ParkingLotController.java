@@ -1,7 +1,7 @@
 package com.example.systemdesign.parkinglot.controller;
 
 import com.example.systemdesign.parkinglot.document.*;
-import com.example.systemdesign.parkinglot.services.CommonRepositoryService;
+import com.example.systemdesign.parkinglot.services.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +34,12 @@ public class ParkingLotController {
     @RequestMapping(method = RequestMethod.GET, value = "/all")
     public List<ParkingLot> getAllParkingLot() {
         return parkingLotService.findAll();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/find/{id}")
+    public ParkingLot getParkingLotById(@PathVariable String id) {
+        return parkingLotService.findById(id).isPresent() ?
+                parkingLotService.findById(id).get() : new ParkingLot();
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/addparkinglot")

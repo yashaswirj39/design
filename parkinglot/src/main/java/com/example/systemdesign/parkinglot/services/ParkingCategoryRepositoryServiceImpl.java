@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @Service
 public class ParkingCategoryRepositoryServiceImpl implements
-                                        CommonRepositoryService<ParkingCategory, String>{
+        CommonRepositoryService<ParkingCategory, String> {
 
     private final ParkingCategoryRepository repositoryService;
 

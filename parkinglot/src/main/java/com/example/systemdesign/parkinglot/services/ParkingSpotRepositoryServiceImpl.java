@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Service
 public class ParkingSpotRepositoryServiceImpl implements
-                                                CommonRepositoryService<ParkingSpot, String>{
+                            CommonRepositoryService<ParkingSpot, String> {
 
     private final ParkingSpotRepository repositoryService;
 

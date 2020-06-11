@@ -48,6 +48,6 @@ public class ParkingLotServiceImpl implements CommonRepositoryService<ParkingLot
 
     @Override
     public void deleteByParkingLotId(String id) {
-        repositoryService.deleteByParkingLotId(id);
+        repositoryService.deleteById(id);
     }
 }
