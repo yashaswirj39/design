@@ -19,5 +19,4 @@ public class Floors {
     private String id = GenerateUniqueId.generate();
     private int floorNumber;
     private String parkingLotId;
-    private List<ParkingSpot> spotList = new ArrayList<>();
 }
