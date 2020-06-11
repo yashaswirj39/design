@@ -1,5 +1,6 @@
 package com.example.systemdesign.parkinglot.services;
 
+import com.example.systemdesign.parkinglot.document.Floors;
 import com.example.systemdesign.parkinglot.document.ParkingCategory;
 import com.example.systemdesign.parkinglot.repos.ParkingCategoryRepository;
 import org.springframework.stereotype.Service;
@@ -49,5 +50,15 @@ public class ParkingCategoryRepositoryServiceImpl implements
     @Override
     public void deleteByParkingLotId(String id) {
         repositoryService.deleteByParkingLotId(id);
+    }
+
+    @Override
+    public void deleteByFloorId(String id) {
+        repositoryService.deleteByFloorId(id);
+    }
+
+    @Override
+    public List<ParkingCategory> findByParkingLotId(String id) {
+        return repositoryService.findByParkingLotId(id);
     }
 }

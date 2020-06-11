@@ -4,6 +4,7 @@ import com.example.systemdesign.parkinglot.document.ParkingLot;
 import com.example.systemdesign.parkinglot.repos.ParkingLotRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,5 +50,13 @@ public class ParkingLotServiceImpl implements CommonRepositoryService<ParkingLot
     @Override
     public void deleteByParkingLotId(String id) {
         repositoryService.deleteById(id);
+    }
+
+    @Override
+    public void deleteByFloorId(String id) {}
+
+    @Override
+    public List<ParkingLot> findByParkingLotId(String id) {
+        return Arrays.asList(repositoryService.findById(id).get());
     }
 }

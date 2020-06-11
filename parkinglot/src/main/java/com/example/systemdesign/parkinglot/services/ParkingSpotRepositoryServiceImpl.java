@@ -51,4 +51,14 @@ public class ParkingSpotRepositoryServiceImpl implements
     public void deleteByParkingLotId(String id) {
         repositoryService.deleteByParkingLotId(id);
     }
+
+    @Override
+    public void deleteByFloorId(String id) {
+        repositoryService.deleteByFloorId(id);
+    }
+
+    @Override
+    public List<ParkingSpot> findByParkingLotId(String id) {
+        return repositoryService.findByParkingLotId(id);
+    }
 }

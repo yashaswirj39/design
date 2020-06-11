@@ -50,4 +50,14 @@ public class PaymentRepositoryServiceImpl implements CommonRepositoryService<Pay
     public void deleteByParkingLotId(String id) {
         repositoryService.deleteByParkingLotId(id);
     }
+
+    @Override
+    public void deleteByFloorId(String id) {
+        repositoryService.deleteByFloorId(id);
+    }
+
+    @Override
+    public List<Payment> findByParkingLotId(String id) {
+        return repositoryService.findByParkingLotId(id);
+    }
 }

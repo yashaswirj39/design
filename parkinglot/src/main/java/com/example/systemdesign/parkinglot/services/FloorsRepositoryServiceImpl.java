@@ -50,4 +50,14 @@ public class FloorsRepositoryServiceImpl implements CommonRepositoryService<Floo
     public void deleteByParkingLotId(String id) {
         repositoryService.deleteByParkingLotId(id);
     }
+
+    @Override
+    public void deleteByFloorId(String id) {
+        repositoryService.deleteById(id);
+    }
+
+    @Override
+    public List<Floors> findByParkingLotId(String id) {
+        return repositoryService.findByParkingLotId(id);
+    }
 }
