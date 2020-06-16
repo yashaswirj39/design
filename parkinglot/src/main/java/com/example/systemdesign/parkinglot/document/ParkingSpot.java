@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ParkingSpot {
     @Id
     private String id = GenerateUniqueId.generate();
-    private String spotType;
+    private String categoryType;
     private int availableCount;
     private int acquiredCount;
     private String parkingLotId;
