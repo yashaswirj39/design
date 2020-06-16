@@ -61,4 +61,8 @@ public class ParkingSpotRepositoryServiceImpl implements
     public List<ParkingSpot> findByParkingLotId(String id) {
         return repositoryService.findByParkingLotId(id);
     }
+
+    public void deleteParkingSpotByIdAndParkingLotIdAndFloorId(String id, String parkingLotId, String floorId){
+        repositoryService.deleteParkingSpotByIdAndParkingLotIdAndFloorId(id, parkingLotId, floorId);
+    }
 }

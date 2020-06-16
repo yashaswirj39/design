@@ -15,4 +15,5 @@ public interface CommonRepositoryService<T, ID> {
     void deleteByParkingLotId(String id);
     void deleteByFloorId(String id);
     List<T> findByParkingLotId(String id);
+    default void deleteParkingSpotByIdAndParkingLotIdAndFloorId(String id, String parkingLotId, String floorId){}
 }

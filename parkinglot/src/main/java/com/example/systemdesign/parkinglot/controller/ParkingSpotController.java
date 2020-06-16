@@ -2,9 +2,7 @@ package com.example.systemdesign.parkinglot.controller;
 
 import com.example.systemdesign.parkinglot.document.ParkingSpot;
 import com.example.systemdesign.parkinglot.services.CommonRepositoryService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,28 @@ public class ParkingSpotController {
     @GetMapping("/all")
     public List<ParkingSpot> getAll() {
         return parkingSpotService.findAll();
+    }
+
+    @GetMapping("/find/{id}")
+    public ParkingSpot findById(@PathVariable String id) {
+        return parkingSpotService.findById(id).get();
+    }
+
+    @PostMapping("/add")
+    public ParkingSpot add(@RequestBody ParkingSpot spot) {
+        return parkingSpotService.save(spot);
+    }
+
+    @PutMapping("/update")
+    public ParkingSpot update(@RequestBody ParkingSpot spot) {
+        return parkingSpotService.save(spot);
+    }
+
+    @DeleteMapping("/delete")
+    public void delete(@RequestBody ParkingSpot spot) {
+        parkingSpotService.deleteParkingSpotByIdAndParkingLotIdAndFloorId(
+                spot.getId(),
+                spot.getParkingLotId(),
+                spot.getFloorId());
     }
 }
