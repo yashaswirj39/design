@@ -1,35 +1,42 @@
 package com.example.systemdesign.parkinglot.controller;
 
 import com.example.systemdesign.parkinglot.document.Payment;
-import com.example.systemdesign.parkinglot.repos.PaymentRepository;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.systemdesign.parkinglot.services.CommonRepositoryService;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class PaymentController {
 
-    private final PaymentRepository repository;
+    private final CommonRepositoryService<Payment, String> paymentService;
 
-    public PaymentController(PaymentRepository repository) {
-        this.repository = repository;
+    public PaymentController(CommonRepositoryService<Payment, String> paymentService) {
+        this.paymentService = paymentService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/info")
+    @GetMapping("/info")
     public List<Payment> getAllPayment() {
-        return repository.findAll();
+        return paymentService.findAll();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/addpayment")
+    @PostMapping("/addpayment")
     public Payment add(@RequestBody Payment payment) {
-        return repository.insert(payment);
+        return paymentService.save(payment);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/modifypayment")
+    @PutMapping("/modifypayment")
     public Payment update(@RequestBody Payment payment) {
-        return repository.save(payment);
+        return paymentService.save(payment);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteById(@PathVariable String id) {
+        paymentService.deleteById(id);
+    }
+
+    @DeleteMapping("/delete")
+    public void delete(@RequestBody Payment payment) {
+        paymentService.delete(payment);
     }
 }
