@@ -48,15 +48,5 @@ public class ParkingLotServiceImpl implements CommonRepositoryService<ParkingLot
     }
 
     @Override
-    public void deleteByParkingLotId(String id) {
-        repositoryService.deleteById(id);
-    }
-
-    @Override
     public void deleteByFloorId(String id) {}
-
-    @Override
-    public List<ParkingLot> findByParkingLotId(String id) {
-        return Arrays.asList(repositoryService.findById(id).get());
-    }
 }
